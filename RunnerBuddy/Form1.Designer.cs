@@ -40,6 +40,9 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRemoveEntry = new System.Windows.Forms.Button();
             this.lblCurrentAddress = new System.Windows.Forms.Label();
+            this.cbJoystick = new System.Windows.Forms.CheckBox();
+            this.cbTouchScreen = new System.Windows.Forms.CheckBox();
+            this.cbShowVisTab = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -50,7 +53,7 @@
             // 
             // btnINILocation
             // 
-            this.btnINILocation.Location = new System.Drawing.Point(95, 28);
+            this.btnINILocation.Location = new System.Drawing.Point(48, 28);
             this.btnINILocation.Name = "btnINILocation";
             this.btnINILocation.Size = new System.Drawing.Size(75, 23);
             this.btnINILocation.TabIndex = 0;
@@ -61,7 +64,7 @@
             // lblINIFileLocation
             // 
             this.lblINIFileLocation.AutoSize = true;
-            this.lblINIFileLocation.Location = new System.Drawing.Point(199, 28);
+            this.lblINIFileLocation.Location = new System.Drawing.Point(152, 28);
             this.lblINIFileLocation.Name = "lblINIFileLocation";
             this.lblINIFileLocation.Size = new System.Drawing.Size(159, 17);
             this.lblINIFileLocation.TabIndex = 1;
@@ -69,7 +72,7 @@
             // 
             // btnAddIPAddress
             // 
-            this.btnAddIPAddress.Location = new System.Drawing.Point(64, 89);
+            this.btnAddIPAddress.Location = new System.Drawing.Point(17, 89);
             this.btnAddIPAddress.Name = "btnAddIPAddress";
             this.btnAddIPAddress.Size = new System.Drawing.Size(106, 23);
             this.btnAddIPAddress.TabIndex = 2;
@@ -79,14 +82,14 @@
             // 
             // tbIPAddress
             // 
-            this.tbIPAddress.Location = new System.Drawing.Point(202, 89);
+            this.tbIPAddress.Location = new System.Drawing.Point(155, 89);
             this.tbIPAddress.Name = "tbIPAddress";
             this.tbIPAddress.Size = new System.Drawing.Size(122, 22);
             this.tbIPAddress.TabIndex = 3;
             // 
             // tbIPAlias
             // 
-            this.tbIPAlias.Location = new System.Drawing.Point(364, 90);
+            this.tbIPAlias.Location = new System.Drawing.Point(317, 90);
             this.tbIPAlias.Name = "tbIPAlias";
             this.tbIPAlias.Size = new System.Drawing.Size(262, 22);
             this.tbIPAlias.TabIndex = 4;
@@ -95,7 +98,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(64, 152);
+            this.listBox1.Location = new System.Drawing.Point(17, 152);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(357, 196);
             this.listBox1.TabIndex = 6;
@@ -104,7 +107,7 @@
             // lblIPAddress
             // 
             this.lblIPAddress.AutoSize = true;
-            this.lblIPAddress.Location = new System.Drawing.Point(202, 66);
+            this.lblIPAddress.Location = new System.Drawing.Point(155, 66);
             this.lblIPAddress.Name = "lblIPAddress";
             this.lblIPAddress.Size = new System.Drawing.Size(122, 17);
             this.lblIPAddress.TabIndex = 7;
@@ -113,7 +116,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(364, 66);
+            this.lblAlias.Location = new System.Drawing.Point(317, 66);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(38, 17);
             this.lblAlias.TabIndex = 8;
@@ -121,7 +124,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(447, 152);
+            this.btnUpdate.Location = new System.Drawing.Point(400, 152);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(179, 23);
             this.btnUpdate.TabIndex = 9;
@@ -131,7 +134,7 @@
             // 
             // btnRemoveEntry
             // 
-            this.btnRemoveEntry.Location = new System.Drawing.Point(447, 202);
+            this.btnRemoveEntry.Location = new System.Drawing.Point(400, 179);
             this.btnRemoveEntry.Name = "btnRemoveEntry";
             this.btnRemoveEntry.Size = new System.Drawing.Size(178, 23);
             this.btnRemoveEntry.TabIndex = 10;
@@ -142,17 +145,50 @@
             // lblCurrentAddress
             // 
             this.lblCurrentAddress.AutoSize = true;
-            this.lblCurrentAddress.Location = new System.Drawing.Point(202, 118);
+            this.lblCurrentAddress.Location = new System.Drawing.Point(155, 118);
             this.lblCurrentAddress.Name = "lblCurrentAddress";
             this.lblCurrentAddress.Size = new System.Drawing.Size(111, 17);
             this.lblCurrentAddress.TabIndex = 11;
             this.lblCurrentAddress.Text = "Current Address";
             // 
+            // cbJoystick
+            // 
+            this.cbJoystick.AutoSize = true;
+            this.cbJoystick.Location = new System.Drawing.Point(400, 209);
+            this.cbJoystick.Name = "cbJoystick";
+            this.cbJoystick.Size = new System.Drawing.Size(109, 21);
+            this.cbJoystick.TabIndex = 12;
+            this.cbJoystick.Text = "Use Joystick";
+            this.cbJoystick.UseVisualStyleBackColor = true;
+            // 
+            // cbTouchScreen
+            // 
+            this.cbTouchScreen.AutoSize = true;
+            this.cbTouchScreen.Location = new System.Drawing.Point(400, 237);
+            this.cbTouchScreen.Name = "cbTouchScreen";
+            this.cbTouchScreen.Size = new System.Drawing.Size(113, 21);
+            this.cbTouchScreen.TabIndex = 13;
+            this.cbTouchScreen.Text = "Touchscreen";
+            this.cbTouchScreen.UseVisualStyleBackColor = true;
+            // 
+            // cbShowVisTab
+            // 
+            this.cbShowVisTab.AutoSize = true;
+            this.cbShowVisTab.Location = new System.Drawing.Point(400, 265);
+            this.cbShowVisTab.Name = "cbShowVisTab";
+            this.cbShowVisTab.Size = new System.Drawing.Size(113, 21);
+            this.cbShowVisTab.TabIndex = 14;
+            this.cbShowVisTab.Text = "Show VIS tab";
+            this.cbShowVisTab.UseVisualStyleBackColor = true;
+            // 
             // RBMainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 356);
+            this.ClientSize = new System.Drawing.Size(769, 416);
+            this.Controls.Add(this.cbShowVisTab);
+            this.Controls.Add(this.cbTouchScreen);
+            this.Controls.Add(this.cbJoystick);
             this.Controls.Add(this.lblCurrentAddress);
             this.Controls.Add(this.btnRemoveEntry);
             this.Controls.Add(this.btnUpdate);
@@ -185,6 +221,9 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRemoveEntry;
         private System.Windows.Forms.Label lblCurrentAddress;
+        private System.Windows.Forms.CheckBox cbJoystick;
+        private System.Windows.Forms.CheckBox cbTouchScreen;
+        private System.Windows.Forms.CheckBox cbShowVisTab;
     }
 }
 

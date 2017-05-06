@@ -43,12 +43,20 @@ namespace RunnerBuddy
             {
                 artemisINIData = artemisINIParser.ReadFile(lblINIFileLocation.Text);
                 artemisINIData.Configuration.AssigmentSpacer = string.Empty;
-                lblCurrentAddress.Text = "Current: " + artemisINIData.Global["forceAddress"];
+                UpdateScreenData();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void UpdateScreenData()
+        {
+            lblCurrentAddress.Text = "Current: " + artemisINIData.Global["forceAddress"];
+            cbJoystick.Checked = artemisINIData.Global["useJoystick"] == "1";
+            cbTouchScreen.Checked = artemisINIData.Global["touchScreen"] == "1";
+            cbShowVisTab.Checked = artemisINIData.Global["showVisTab"] == "1";
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -66,7 +74,7 @@ namespace RunnerBuddy
                 lblINIFileLocation.Text = rbINIData["GeneralConfiguration"]["defaultArtemisLocation"];
                 SaveRBData();
                 artemisINIData = artemisINIParser.ReadFile(lblINIFileLocation.Text);
-                lblCurrentAddress.Text = "Current: " + artemisINIData.Global["forceAddress"];
+                UpdateScreenData();
             }
         }
 
@@ -109,9 +117,8 @@ namespace RunnerBuddy
                 return;
             }
 
-            artemisINIData.Global["forceAddress"] = IPAddresses.ElementAt(selectedIndex).Value;
-            lblCurrentAddress.Text = "Current: " + artemisINIData.Global["forceAddress"];
             SaveArtemisData();
+            lblCurrentAddress.Text = "Current: " + artemisINIData.Global["forceAddress"];
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,6 +153,10 @@ namespace RunnerBuddy
 
         private void SaveArtemisData()
         {
+            artemisINIData.Global["forceAddress"] = IPAddresses.ElementAt(selectedIndex).Value;
+            artemisINIData.Global["useJoystick"] = cbJoystick.Checked ? "1" : "0";
+            artemisINIData.Global["touchScreen"] = cbTouchScreen.Checked ? "1" : "0";
+            artemisINIData.Global["showVisTab"] = cbShowVisTab.Checked ? "1" : "0";
             artemisINIParser.WriteFile(lblINIFileLocation.Text, artemisINIData);
         }
     }
